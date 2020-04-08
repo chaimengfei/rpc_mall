@@ -1,0 +1,28 @@
+syntax = "proto3";
+//protoc --go_out=plugins=grpc:. order.proto
+message BookingGoodsRequest {
+    int32 goodsId = 1;
+    int32 price = 2;
+    int32 num = 3;
+    int32 userId = 4;
+}
+message BookingGoodsResponse {
+    string orderId = 1;
+    int64 createTime = 2;
+}
+message FindByOrderIdRequest {
+    string id = 1;
+}
+message FindByOrderIdResponse {
+    string id = 1;
+    int32 goodsId = 2;
+    string goodsName = 3;
+    int32 num = 4;
+    int32 userId = 5;
+    int64 createTime = 6;
+}
+
+service OrderRpc {
+    rpc BookingGoods (BookingGoodsRequest) returns (BookingGoodsResponse);
+    rpc FindByOrderId (FindByOrderIdRequest) returns (FindByOrderIdResponse);
+}

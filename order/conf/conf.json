@@ -1,0 +1,30 @@
+{
+  "Mode": "release",
+  "Port": ":9994",
+  "Mysql": {
+    "DataSource": "root:123456@tcp(192.168.0.119:3306)/mall?charset=utf8&parseTime=True&loc=Local",
+    "Table": {
+      "Order": "tab_order"
+    }
+  },
+  "Redis": {
+    "DataSource": "192.168.0.119:6379",
+    "Auth": ""
+  },
+  "IntegralRpc": {
+  "Target": "cmf:///integral-rpc",
+  "Endpoints": [
+    "192.168.0.119:2379"
+  ]
+  },
+  "RpcServerConfig": {
+    "Schema": "cmf",
+    "ServerName": "order-rpc",
+    "ServerAddress": ":9094",
+    "Endpoints": [
+      "192.168.0.119:2379"
+    ]
+  }
+
+
+}

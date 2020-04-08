@@ -1,0 +1,17 @@
+syntax = "proto3";
+//protoc --go_out=plugins=grpc:. user.proto
+
+message FindUserByMobileRequest {
+    string mobile = 1;
+}
+message FindUserByIdRequest {
+    int32 id = 1;
+}
+message UserResponse {
+    int32 id = 1;
+    string name = 2;
+}
+service UserRpc {
+    rpc FindUserByMobile (FindUserByMobileRequest) returns (UserResponse);
+    rpc FindUserById (FindUserByIdRequest) returns (UserResponse);
+}

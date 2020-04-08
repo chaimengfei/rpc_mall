@@ -1,0 +1,26 @@
+{
+  "Mode": "release",
+  "Mysql": {
+    "DataSource": "root:123456@tcp(192.168.0.119:3306)/mall?charset=utf8&parseTime=True&loc=Local",
+    "Table": {
+      "Integral": "tab_integral"
+    }
+  },
+  "Redis": {
+    "DataSource": "192.168.0.119:6379",
+    "Auth": ""
+  },
+  "RpcServerConfig": {
+    "Schema": "cmf",
+    "ServerName": "integral-rpc",
+    "ServerAddress": ":9092",
+    "Endpoints": [
+      "192.168.0.119:2379"
+    ]
+  },
+  "RabbitMq": {
+    "DataSource": "amqp://guest:guest@192.168.0.119:5672/",
+    "VirtualHost": "",
+    "QueueName": "integral"
+  }
+}
